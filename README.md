@@ -1,3 +1,3 @@
 # alma2015al
-COpy right (c)
+Copyright (c)
 Nouaman
