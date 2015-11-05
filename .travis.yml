@@ -1,0 +1,4 @@
+language: java
+script: cd bundles/fr.univnantes.alma.releng && mvn clean verify
+jdk: oraclejdk8
+
