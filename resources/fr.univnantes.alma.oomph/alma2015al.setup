@@ -53,13 +53,20 @@
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask"
-      id="">
+      id="workingset">
     <workingSet
         name="Resources"
-        id="fr.univnantes.alma.oomph.workingset">
+        id="fr.univnantes.alma.oomph.workingset.resources">
       <predicate
-          xsi:type="predicates:RepositoryPredicate"
-          project="fr.univnantes.alma.oomph"/>
+          xsi:type="predicates:LocationPredicate"
+          pattern="resources/*"/>
+    </workingSet>
+    <workingSet
+        name="Bundles"
+        id="fr.univnantes.alma.oomph.workingset.bundles">
+      <predicate
+          xsi:type="predicates:LocationPredicate"
+          pattern="bundles/*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
@@ -73,11 +80,13 @@
       xsi:type="projects:ProjectsImportTask"
       id="fr.univnantes.alma.project.import">
     <sourceLocator
-        rootFolder="${git.clone.alma2015al.location}"/>
+        rootFolder="${git.clone.alma2015al.location}"
+        locateNestedProjects="true"/>
     <description>Import the project in the workspace</description>
   </setupTask>
   <setupTask
       xsi:type="pde:TargetPlatformTask"
+      id="targetpf"
       name="mars.target"/>
   <stream name="master"
       label=""/>
