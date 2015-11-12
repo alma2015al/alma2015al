@@ -3,7 +3,7 @@ script: cd bundles/fr.univnantes.alma.releng && mvn clean verify
 jdk: oraclejdk8
 deploy:
   provider: releases
-  api-key: "XpoK6hMVNnqkERfVm9Dd"
+  api-key: f4c56bf99ddb6749b9ca69682fbd4b902de1348d
   file:
     - "bundles/fr.univnantes.alma.repository/target/products/ALMAServer-linux.gtk.x86_64.zip"
     - "bundles/fr.univnantes.alma.repository/target/products/ALMAServer-macosx.cocoa.x86_64.zip"
