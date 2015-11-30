@@ -1,4 +1,15 @@
 language: java
 script: cd bundles/fr.univnantes.alma.releng && mvn clean verify
 jdk: oraclejdk8
+deploy:
+  provider: releases
+  api_key:
+    secure: tRcJqzi0rdjvH9C906kWqcHK5FIHbmXVfsNRITqei1PWo1GZYtljFBkOW0QreuyumbVpPA6zAPwNw6LYuWCCy9N9V6nWEee1MNUIx0Bk7j7iaQvSSulwZ+Sc68SraBbmQHhpMEUi5fkw/c5pZTNvjBLkLfOcoEypQ6zAat+UaNlnx49GfQBzKHSaeSrJPqwB+4yoGdayXhdi6XaWlzerc9O92uFCK+3PmFkOX+GshksdT3itCaH27ze9FCDohvZWaDK7WaWUkLOl3SIaFPDBlabNdHpbhv7l13k2QXUCtvnVOArjdoIlSJOA3HglUEbAkphqEMlxqfLcXmjwX0EUsa+UfN3a+VUivofhE74Shd5PCc0j32po0PWIhIQ8F4/2OwQgxtmqYy52Gsxfk3yeSL6x/wZ8VQk77BeWOpRATFSgQ4tcgi5orDcHPZSedFDHN9mR7OoZsf1zL1cNTKn2leD+05WKn3s8RLkYZJF8imdZi9V4bxlt5NzUG72BeXqNaX2dLrU0R7eAl7TpD2tSBXeA4losZruQQhhjeZtgvKbR5Z7eCmHUKjVdjr10YdKvBPiU6hNX9f2zuV3Oakn7pXF6nSOsepHHdNjxObO/nCyoB9k4fp09gHaJWoI6IxZbWePuri/K99o/ENQv1jIHEgXyCR52jD0Is5YWS+HHJHo=
+  file:
+    - "../fr.univnantes.alma.repository/target/products/ALMAServer-linux.gtk.x86_64.zip"
+    - "../fr.univnantes.alma.repository/target/products/ALMAServer-macosx.cocoa.x86_64.zip"
+    - "../fr.univnantes.alma.repository/target/products/ALMAServer-win32.win32.x86_64.zip"
+  skip_cleanup: true
+  on:
+    tags: true
 
